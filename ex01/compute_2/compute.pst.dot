@@ -1,0 +1,45 @@
+digraph "Region Graph for 'compute' function" {
+	label="Region Graph for 'compute' function";
+
+	Node0x5583dff884a0 [shape=record,label="{%3:\l  %4 = alloca i32, align 4\l  %5 = alloca i32*, align 8\l  %6 = alloca i32*, align 8\l  %7 = alloca i32, align 4\l  %8 = alloca i32, align 4\l  %9 = alloca i32, align 4\l  store i32* %0, i32** %5, align 8\l  store i32* %1, i32** %6, align 8\l  store i32 %2, i32* %7, align 4\l  %10 = load i32, i32* %7, align 4\l  %11 = icmp sgt i32 %10, 0\l  br i1 %11, label %12, label %36\l}"];
+	Node0x5583dff884a0 -> Node0x5583dff887d0;
+	Node0x5583dff884a0 -> Node0x5583dff8ae20;
+	Node0x5583dff887d0 [shape=record,label="{%12:\l12:                                               \l  store i32 0, i32* %9, align 4\l  store i32 0, i32* %8, align 4\l  br label %13\l}"];
+	Node0x5583dff887d0 -> Node0x5583dff8b150;
+	Node0x5583dff8b150 [shape=record,label="{%13:\l13:                                               \l  %14 = load i32, i32* %8, align 4\l  %15 = load i32, i32* %7, align 4\l  %16 = icmp slt i32 %14, %15\l  br i1 %16, label %17, label %34\l}"];
+	Node0x5583dff8b150 -> Node0x5583dff8b4f0;
+	Node0x5583dff8b150 -> Node0x5583dff8b550;
+	Node0x5583dff8b4f0 [shape=record,label="{%17:\l17:                                               \l  %18 = load i32*, i32** %5, align 8\l  %19 = load i32, i32* %8, align 4\l  %20 = sext i32 %19 to i64\l  %21 = getelementptr inbounds i32, i32* %18, i64 %20\l  %22 = load i32, i32* %21, align 4\l  %23 = load i32*, i32** %6, align 8\l  %24 = load i32, i32* %8, align 4\l  %25 = sext i32 %24 to i64\l  %26 = getelementptr inbounds i32, i32* %23, i64 %25\l  %27 = load i32, i32* %26, align 4\l  %28 = mul nsw i32 %22, %27\l  %29 = load i32, i32* %9, align 4\l  %30 = add nsw i32 %29, %28\l  store i32 %30, i32* %9, align 4\l  br label %31\l}"];
+	Node0x5583dff8b4f0 -> Node0x5583dff8ba70;
+	Node0x5583dff8ba70 [shape=record,label="{%31:\l31:                                               \l  %32 = load i32, i32* %8, align 4\l  %33 = add nsw i32 %32, 1\l  store i32 %33, i32* %8, align 4\l  br label %13\l}"];
+	Node0x5583dff8ba70 -> Node0x5583dff8b150[constraint=false];
+	Node0x5583dff8b550 [shape=record,label="{%34:\l34:                                               \l  %35 = load i32, i32* %9, align 4\l  store i32 %35, i32* %4, align 4\l  br label %37\l}"];
+	Node0x5583dff8b550 -> Node0x5583dff8bce0;
+	Node0x5583dff8bce0 [shape=record,label="{%37:\l37:                                               \l  %38 = load i32, i32* %4, align 4\l  ret i32 %38\l}"];
+	Node0x5583dff8ae20 [shape=record,label="{%36:\l36:                                               \l  store i32 0, i32* %4, align 4\l  br label %37\l}"];
+	Node0x5583dff8ae20 -> Node0x5583dff8bce0;
+	colorscheme = "paired12"
+        subgraph cluster_0x5583dff87a90 {
+          label = "";
+          style = filled;
+          color = 1
+          subgraph cluster_0x5583dff883b0 {
+            label = "";
+            style = filled;
+            color = 3
+            subgraph cluster_0x5583dff87f20 {
+              label = "";
+              style = filled;
+              color = 5
+              Node0x5583dff8b150;
+              Node0x5583dff8b4f0;
+              Node0x5583dff8ba70;
+            }
+            Node0x5583dff884a0;
+            Node0x5583dff887d0;
+            Node0x5583dff8b550;
+            Node0x5583dff8ae20;
+          }
+          Node0x5583dff8bce0;
+        }
+}
